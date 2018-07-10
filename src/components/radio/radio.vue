@@ -76,7 +76,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .recommendRadio {
   margin: 20px;
   font-weight: 700;

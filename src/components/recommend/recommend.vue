@@ -11,11 +11,17 @@
         </slider>
       </div> -->
 
+      <!-- <div class="wrapper">
+        <ul class="content">
+          <li></li>
+        </ul>
+      </div> -->
+
       <!-- 推荐歌单 -->
       <div class="songList">
         <h1 class="songList_text">推荐歌单</h1>
         <div v-if="songList.length" class="songList_box">
-          <div v-for="song in songList" :key="song.id">
+          <div v-for="song in songList" :key="song.id" @click="songListDetail(song)">
             <img :src="song.picUrl" alt="">
             <h1 class="songList_name">{{song.name}}</h1>
           </div>
@@ -26,7 +32,7 @@
 </template>
 
 <script>
-import { getBanner, getSongList } from "../../api/recommend";
+import { getBanner, getSongList, getSongListDetail } from "../../api/recommend";
 import BScroll from "better-scroll";
 
 export default {
@@ -50,18 +56,17 @@ export default {
       getSongList().then(res => {
         this.songList = res.data.result;
       });
+    },
+    songListDetail(song) {
+      getSongListDetail(song.id).then(res => {
+        this.$router.push({ name: 'recommend', params: { id: song.id } });
+      });
     }
   }
 };
 </script>
 
-<style>
-/* .slider-wrapper {
-  width: 96%;
-  margin: 0 auto;
-  border-radius: 5px;
-  overflow: hidden;
-} */
+<style scoped>
 .songList_text {
   margin: 20px;
   font-weight: 700;
