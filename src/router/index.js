@@ -26,6 +26,7 @@ export default new Router({
     { path: '/recommend', component: resolve => require(['@/components/recommend/recommend'], resolve)},
     { path: '/rank', component: resolve => require(['@/components/rank/rank'], resolve) },
     { path: '/radio', component: resolve => require(['@/components/radio/radio'], resolve) },
-    { path: '/singer', component: resolve => require(['@/components/singer/singer'], resolve) }
+    { path: '/singer', component: resolve => require(['@/components/singer/singer'], resolve) },
+    { path: '/search', component: resolve => require(['@/components/search/search'], resolve) }
   ]
 })

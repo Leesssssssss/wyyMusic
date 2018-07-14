@@ -1,8 +1,12 @@
 <template>
   <div class="header">
-    <img class="headerImg" src="../../../static/img/category.png" alt="">
+    <router-link tag="div" to="/my">
+      <img class="headerImg" src="../../../static/img/category.png" alt="">
+    </router-link>
     <h1 class="text">MUSIC</h1>
-    <img class="headerImg" src="../../../static/img/search-sm.png" alt="">
+    <router-link tag="div" to="/search">
+      <img class="headerImg" src="../../../static/img/search-sm.png" alt="">
+    </router-link>
   </div>
 </template>
 
